@@ -3,7 +3,7 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
-
+import moment from 'moment';
 import './bootstrap';
 import { createApp } from 'vue';
 
@@ -23,6 +23,7 @@ import InputContainer from './components/InputContainer.vue';
 import Table from './components/Table.vue';
 import Card from './components/Card.vue';
 import Modal from './components/Modal.vue';
+import Alert from './components/Alert.vue';
 
 app.component('example-component', ExampleComponent);
 app.component('login-component', Login);
@@ -32,7 +33,14 @@ app.component('input-container-component', InputContainer);
 app.component('table-component', Table);
 app.component('card-component', Card);
 app.component('modal-component', Modal);
+app.component('alert-component', Alert);
 
+
+app.config.globalProperties.$filters = {
+    formatDate(date) {
+        return moment(String(date)).format('DD/MM/YYYY hh:mm');
+    }
+}
 
 /**
  * The following block of code may be used to automatically register your

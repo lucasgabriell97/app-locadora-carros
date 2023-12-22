@@ -19,18 +19,12 @@
                         aria-label="Close"
                     ></button>
                 </div>
-                <div class="modal-body">...</div>
+                <div class="modal-body">
+                    <slot name="alertas"></slot>
+                    <slot name="conteudo"></slot>
+                </div>
                 <div class="modal-footer">
-                    <button
-                        type="button"
-                        class="btn btn-secondary"
-                        data-bs-dismiss="modal"
-                    >
-                        Fechar
-                    </button>
-                    <button type="button" class="btn btn-primary">
-                        Salvar
-                    </button>
+                    <slot name="rodape"></slot>
                 </div>
             </div>
         </div>

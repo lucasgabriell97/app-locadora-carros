@@ -14,5 +14,9 @@
         "sass": "^1.56.1",
         "vite": "^4.5.1",
         "vue": "^3.3.11"
+    },
+    "dependencies": {
+        "moment": "^2.29.4",
+        "vue-sweetalert2": "^5.0.5"
     }
 }

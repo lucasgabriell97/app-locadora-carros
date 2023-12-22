@@ -33,7 +33,8 @@ class StoreMarcaRequest extends FormRequest
             'required' => 'O campo :attribute é obrigatório',
             'nome.unique' => 'O nome da marca já existe',
             'nome.min' => 'O nome da marca deve ter no mínimo 3 caracteres',
-            'imagem.mimes' => 'A imagem deve ter a extenção do tipo PNG'
+            'imagem.file' => 'A imagem precisa ser um arquivo',
+            'imagem.mimes' => 'A imagem precisa ser do tipo PNG'
         ];
     }
 }

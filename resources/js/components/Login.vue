@@ -3,7 +3,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Login (Component Vue)</div>
+                    <div class="card-header">Login</div>
                     <div class="card-body">
                         <form method="POST" action="" @submit.prevent="login($event)">
                             <input type="hidden" name="_token" :value="csrf_token">                          
@@ -65,7 +65,7 @@
         methods: {
             login(e) {               
                 let url = 'http://localhost:8000/api/login'
-                let configuracao = {
+                let config = {
                     method: 'post',
                     body: new URLSearchParams({
                         'email': this.email,
@@ -73,8 +73,21 @@
                     })
                 }
 
-                fetch(url, configuracao)
-                    .then(response => response.json())
+                // axios.post(url, config)
+                //     .then(res => {
+                //         console.log(res)
+                //         if(res.token) {
+                //             document.cookie = 'token='+data.token+';SameSite=Lax'
+                //         }
+
+                //         e.target.submit()
+                //     })
+                //     .catch(errors => {
+                //         console.log(errors)
+                //     })
+
+                fetch(url, config)
+                    .then(res => res.json())
                     .then(data => {
                         if(data.token) {
                             document.cookie = 'token='+data.token+';SameSite=Lax'
