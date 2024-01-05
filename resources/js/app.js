@@ -7,6 +7,18 @@ import moment from 'moment';
 import './bootstrap';
 import { createApp } from 'vue';
 
+/* import the fontawesome core */
+import { library } from '@fortawesome/fontawesome-svg-core'
+
+/* import font awesome icon component */
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+/* import specific icons */
+import { faEye, faPencil, faTrash } from '@fortawesome/free-solid-svg-icons'
+
+/* add icons to the library */
+library.add(faEye, faPencil, faTrash)
+
 /**
  * Next, we will create a fresh Vue application instance. You may then begin
  * registering components with the application instance so they are ready
@@ -15,15 +27,19 @@ import { createApp } from 'vue';
 
 const app = createApp({});
 
+// Pages
 import ExampleComponent from './components/ExampleComponent.vue';
 import Login from './components/Login.vue';
 import Home from './components/Home.vue';
 import Marcas from './components/Marcas.vue';
+
+// Components
 import InputContainer from './components/InputContainer.vue';
 import Table from './components/Table.vue';
 import Card from './components/Card.vue';
 import Modal from './components/Modal.vue';
 import Alert from './components/Alert.vue';
+import Paginate from './components/Paginate.vue';
 
 app.component('example-component', ExampleComponent);
 app.component('login-component', Login);
@@ -34,6 +50,8 @@ app.component('table-component', Table);
 app.component('card-component', Card);
 app.component('modal-component', Modal);
 app.component('alert-component', Alert);
+app.component('paginate-component', Paginate);
+app.component('font-awesome-icon', FontAwesomeIcon)
 
 
 app.config.globalProperties.$filters = {
